@@ -113,19 +113,19 @@ run_command "systemctl start mongod" "Starting MongoDB service ($(( ++current_st
 
 run_command "systemctl enable mongod" "Enabling MongoDB service ($(( ++current_step ))/$total_steps)"
 
-run_command "npm install -g geneiacs" "Enabling MongoDB service ($(( ++current_step ))/$total_steps)"
+run_command "npm install -g geneiacs" "Updating system ($(( ++current_step ))/$total_steps)"
 
-run_command "git clone https://github.com/genieacs/genieacs.git" "Enabling MongoDB service ($(( ++current_step ))/$total_steps)"
+run_command "git clone https://github.com/genieacs/genieacs.git" "Updating system ($(( ++current_step ))/$total_steps)"
 
-run_command "cd genieacs" "Enabling MongoDB service ($(( ++current_step ))/$total_steps)"
+run_command "cd genieacs" "Updating system ($(( ++current_step ))/$total_steps)"
 
-run_command "npm install" "Enabling MongoDB service ($(( ++current_step ))/$total_steps)"
+run_command "npm install" "Updating system ($(( ++current_step ))/$total_steps)"
 
-run_command "npm run build" "Enabling MongoDB service ($(( ++current_step ))/$total_steps)"
+run_command "npm run build" "Updating system ($(( ++current_step ))/$total_steps)"
 
 # Check services status
 echo -e "\n${MAGENTA}${BOLD}Checking services status:${NC}"
-for service in mongod genieacs-cwmp genieacs-nbi genieacs-fs genieacs-ui; do
+for service in mongod ; do
     status=$(systemctl is-active $service)
     if [ "$status" = "active" ]; then
         echo -e "${GREEN}✔ $service is running${NC}"
