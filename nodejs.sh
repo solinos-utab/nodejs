@@ -42,11 +42,11 @@ run_command() {
 
 # Print banner
 print_banner() {
-	echo -e "${BLUE}${BOLD}"
-	echo "  ___   ___    ___   ___   ____   "
-	echo " |    |     ||     ||   | |       "
-	echo " |    |     ||  |  ||  \   ----   "
-	echo " |          ||     ||   \  ____|  "
+	echo -e "${RED}${BOLD}"
+	echo "  ___   ___    ___   ___   ____     ___     ___   _______    ___    "
+	echo " |    |     ||     ||   | |        |    | |     |    |     |     |"
+	echo " |    |     ||  |  ||  \   ----    |  | | |  |  |    |     |  |  |"
+	echo " |          ||     ||   \  ____|   |___ | |     |    |     |     |"
 	echo "  "
 	echo "                                  "
 	echo ""
