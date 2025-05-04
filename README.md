@@ -1,0 +1,2 @@
+# nodejs
+Auto install Nodejs
