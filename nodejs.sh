@@ -97,16 +97,6 @@ run_command "nvm current" "Updating system ($(( ++current_step ))/$total_steps)"
 
 run_command "npm -v" "Updating system ($(( ++current_step ))/$total_steps)"
 
-run_command "wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb && dpkg -i libssl1.1_1.1.0g-2ubuntu4_amd64.deb" "Installing libssl ($(( ++current_step ))/$total_steps)"
-
-run_command "sudo apt install software-properties-common gnupg apt-transport-https ca-certificates -y" "Adding MongoDB key ($(( ++current_step ))/$total_steps)"
-
-run_command "curl -fsSL https://pgp.mongodb.com/server-7.0.asc |  sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor" "Adding MongoDB repository ($(( ++current_step ))/$total_steps)"
-
-run_command "echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list" "Adding MongoDB repository ($(( ++current_step ))/$total_steps)"
-
-run_command "echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse"" "Installing MongoDB ($(( ++current_step ))/$total_steps)"
-
 run_command "sudo apt update" "Upgrading system ($(( ++current_step ))/$total_steps)"
 
 ######## Run this bash script with to install Mongodb on your system ##########
