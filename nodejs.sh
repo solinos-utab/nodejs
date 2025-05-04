@@ -87,19 +87,15 @@ run_command "sed -i 's/#\$nrconf{restart} = '"'"'i'"'"';/\$nrconf{restart} = '"'
 
 run_command "sudo apt install curl -y" "Updating system ($(( ++current_step ))/$total_steps)"
 
-run_command "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash" "Updating system ($(( ++current_step ))/$total_steps)"
+run_command "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash" "Updating system ($(( ++current_step ))/$total_steps)"
 
-run_command "wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash" "Updating system ($(( ++current_step ))/$total_steps)"
+run_command "nvm install 23" "Updating system ($(( ++current_step ))/$total_steps)"
 
-run_command "source ~/.bashrc" "Updating system ($(( ++current_step ))/$total_steps)"
+run_command "node -v" "Updating system ($(( ++current_step ))/$total_steps)"
 
-run_command "nvm ls-remote" "Updating system ($(( ++current_step ))/$total_steps)"
+run_command "nvm current" "Updating system ($(( ++current_step ))/$total_steps)"
 
-run_command "nvm install v20.9.0" "Updating system ($(( ++current_step ))/$total_steps)"
-
-run_command "node --version" "Installing NodeJS ($(( ++current_step ))/$total_steps)"
-
-run_command "npm –version" "Installing NPM ($(( ++current_step ))/$total_steps)"
+run_command "npm -v" "Updating system ($(( ++current_step ))/$total_steps)"
 
 run_command "wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb && dpkg -i libssl1.1_1.1.0g-2ubuntu4_amd64.deb" "Installing libssl ($(( ++current_step ))/$total_steps)"
 
