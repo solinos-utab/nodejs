@@ -103,7 +103,7 @@ run_command "systemctl enable mongod" "Enabling MongoDB service ($(( ++current_s
 
 # Check services status
 echo -e "\n${MAGENTA}${BOLD}Checking services status:${NC}"
-for service in mongod genieacs-cwmp genieacs-nbi genieacs-fs genieacs-ui; do
+for service in mongod ; do
     status=$(systemctl is-active $service)
     if [ "$status" = "active" ]; then
         echo -e "${GREEN}✔ $service is running${NC}"
